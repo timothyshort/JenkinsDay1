@@ -12,20 +12,20 @@ import cucumber.api.java.en.Then;
 public class StepDefinitions {
 	WebDriver driver;
 	private String rootDir = "C:\\HexawareTraining\\Materials\\Software\\Selenium-BDD";
-	private String browserDriver = "geckodriver.exe";
-	
+	private String browserDriver = "chromedriver.exe";
+
 	@Before
 	public void setup() {
-		System.setProperty("webdriver.gecko.driver", rootDir + "\\" + browserDriver);
+		System.setProperty("webdriver.chrome.driver", rootDir + "\\" + browserDriver);
 		driver = new ChromeDriver();
 	}
-	
+
 	@After
 	public void tearDown() throws InterruptedException {
 		Thread.sleep(2000);
 		driver.quit();
 	}
-	
+
 	@Given("^the user navigates to our home page$")
 	public void the_user_navigates_to_our_home_page() throws Throwable {
 		driver.get("http://sdettraining.com/projects/");
